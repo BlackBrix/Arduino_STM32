@@ -42,18 +42,30 @@
 #include "boards_private.h"      // For PMAP_ROW(), which makes
                                  // PIN_MAP easier to read.
 
-// boardInit(): nothing special to do for Maple.
+
+
+// boardInit():
 //
 // When defining your own board.cpp, you can put extra code in this
 // function if you have anything you want done on reset, before main()
 // or setup() are called.
 //
 // If there's nothing special you need done, feel free to leave this
-// function out, as we do here.
-/*
+// function out (comment out).
 void boardInit(void) {
+    /* 
+    decide if we want to use the debug-pins (SWD and/or JTAG) as normal GPIOs instead,
+    the different possibilities are:
+    AFIO_DEBUG_FULL_SWJ          => Full Serial Wire and JTAG debug
+    AFIO_DEBUG_FULL_SWJ_NO_NJRST => Full Serial Wire and JTAG, but no NJTRST.
+    AFIO_DEBUG_SW_ONLY           => Serial Wire debug only (JTAG-DP disabled, SW-DP enabled)
+    AFIO_DEBUG_NONE              => No debug, all JTAG and SW pins are free for use as GPIOs.
+    */
+    afio_cfg_debug_ports(AFIO_DEBUG_SW_ONLY);
 }
-*/
+
+
+
 
 // Pin map: this lets the basic I/O functions (digitalWrite(),
 // analogRead(), pwmWrite()) translate from pin numbers to STM32
