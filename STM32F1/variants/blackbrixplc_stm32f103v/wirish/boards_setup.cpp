@@ -59,8 +59,16 @@
 
 namespace wirish {
     namespace priv {
-
+        
+#ifdef XTAL16M
+        // 16MHz crystal (HSE)
+        // in this case we set additionally the Bit 17 (PLLXTPRE=1)  =>  then HSE clock is divided by 2 before PLL entry
+        static stm32f1_rcc_pll_data pll_data = {BOARD_RCC_PLLMUL | (0x1 << 17) };
+#else
+        // default 8MHz crystal
         static stm32f1_rcc_pll_data pll_data = {BOARD_RCC_PLLMUL};
+#endif
+        
         __weak rcc_pll_cfg w_board_pll_cfg = {RCC_PLLSRC_HSE, &pll_data};
         __weak adc_prescaler w_adc_pre = ADC_PRE_PCLK2_DIV_6;
         __weak adc_smp_rate w_adc_smp = ADC_SMPR_55_5;
