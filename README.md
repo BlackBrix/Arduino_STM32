@@ -13,7 +13,7 @@ I forked this repo to add a new board/variant (for experimantal/test-purposes) w
 
 In the code this board is called "BLACKBRIX_PLC" because this board is actually the mainboard of a mini-PLC (DIN rail / "smart-relay")  
   
-Installation -> https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation  
+Installation -> https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation  (works with Arduino IDE 1.8.x as well)  
 the complete WIKI -> https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki  
 
 ---- 
