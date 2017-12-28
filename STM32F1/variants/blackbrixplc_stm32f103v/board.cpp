@@ -177,10 +177,11 @@ extern const uint8 boardADCPins[BOARD_NR_ADC_PINS] __FLASH__ = {
     PA0,PA1,PA2,PA3,PA4,PA5,PA6,PA7,PB0,PB1,PC0,PC1,PC2,PC3,PC4,PC5
 };
 
-/* not sure what this is used for */
+/* GPIO-Pins that are used by internal board functions 
+   and therefore not accessible or not usable as a GPIO 
+   (can be special-buttons, LEDs, SWD, JTAG, and so on ...) */
 extern const uint8 boardUsedPins[BOARD_NR_USED_PINS] __FLASH__ = {
-    BOARD_LED_PIN, BOARD_BUTTON_PIN, BOARD_JTMS_SWDIO_PIN,
-    BOARD_JTCK_SWCLK_PIN, BOARD_JTDI_PIN, BOARD_JTDO_PIN, BOARD_NJTRST_PIN
+    BOARD_LED_PIN, BOARD_LED_PIN2, BOARD_JTMS_SWDIO_PIN, BOARD_JTCK_SWCLK_PIN
 };
 
 
