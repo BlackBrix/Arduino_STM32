@@ -1,3 +1,24 @@
+this repo is forked from [rogerclarkmelbourne/Arduino_STM32](https://github.com/rogerclarkmelbourne/Arduino_STM32)  
+  
+----  
+
+the following readme.md is the original one from the original repo mentioned above  
+  
+I forked this repo to add a new board/variant (for experimantal/test-purposes) with:
+* STM32F103VET6 (512kB Flash / 64kB RAM / 100pin)
+* no "Maple USB reset hardware"
+* no buttons 
+* 2 LEDs on PC8 and PC9 
+* 16MHz ext. crystal
+
+In the code this board is called "BLACKBRIX_PLC" because this board is actually the mainboard of a mini-PLC (DIN rail / "smart-relay")  
+
+
+---- 
+
+
+
+
 Arduino STM32  
 =============  
 
