@@ -997,4 +997,108 @@ STM32VLD.menu.opt.o3lto.build.flags.ldspecs=-flto
 STM32VLD.menu.opt.ogstd.build.flags.optimize=-Og
 STM32VLD.menu.opt.ogstd.build.flags.ldspecs=
 
+
+
+########################### BlackBrix PLC STM32F103V ###########################
+#-------------------- copied from Generic STM32F103V ---------------------------
+
+blackbrixplcSTM32F103V.name=BlackBrix PLC STM32F103V
+blackbrixplcSTM32F103V.vid.0=0x1EAF
+blackbrixplcSTM32F103V.pid.0=0x0004
+blackbrixplcSTM32F103V.build.variant=blackbrixplc_stm32f103v
+blackbrixplcSTM32F103V.build.vect=VECT_TAB_ADDR=0x8000000
+blackbrixplcSTM32F103V.build.core=maple
+blackbrixplcSTM32F103V.build.board=BLACKBRIXPLC_STM32F103V
+blackbrixplcSTM32F103V.upload.use_1200bps_touch=false
+blackbrixplcSTM32F103V.upload.file_type=bin
+blackbrixplcSTM32F103V.upload.auto_reset=true
+blackbrixplcSTM32F103V.upload.tool=maple_upload
+blackbrixplcSTM32F103V.upload.protocol=maple_dfu
+
+#blackbrixplcSTM32F103V.build.error_led_port=GPIOE
+#blackbrixplcSTM32F103V.build.error_led_pin=6
+
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VC=STM32F103VC
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VC.build.cpu_flags=-DMCU_STM32F103VC
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VC.upload.maximum_size=262144
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VC.upload.maximum_data_size=49152
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VC.build.ldscript=ld/stm32f103vc.ld
+
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VD=STM32F103VD
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VD.build.cpu_flags=-DMCU_STM32F103VD
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VD.upload.maximum_size=393216
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VD.upload.maximum_data_size=65536
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VD.build.ldscript=ld/stm32f103vd.ld
+
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VE=STM32F103VE (Normal)
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VE.build.cpu_flags=-DMCU_STM32F103VE
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VE.upload.maximum_size=524288
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VE.upload.maximum_data_size=65536
+blackbrixplcSTM32F103V.menu.device_variant.STM32F103VE.build.ldscript=ld/stm32f103ve.ld
+
+#---------------------------- UPLOAD METHODS ---------------------------
+
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethod=STM32duino bootloader (Normal)
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethod.upload.protocol=maple_dfu
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethod.upload.tool=maple_upload
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethod.build.upload_flags=-DSERIAL_USB -DGENERIC_BOOTLOADER 
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethod.build.vect=VECT_TAB_ADDR=0x8002000
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethod.build.ldscript=ld/stm32f103veDFU.ld
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethod.upload.usbID=1EAF:0003
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethod.upload.altID=2
+
+blackbrixplcSTM32F103V.menu.upload_method.serialMethod=Serial
+blackbrixplcSTM32F103V.menu.upload_method.serialMethod.upload.protocol=maple_serial
+blackbrixplcSTM32F103V.menu.upload_method.serialMethod.upload.tool=serial_upload
+blackbrixplcSTM32F103V.menu.upload_method.serialMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1
+
+blackbrixplcSTM32F103V.menu.upload_method.STLinkMethod=STLink
+blackbrixplcSTM32F103V.menu.upload_method.STLinkMethod.upload.protocol=STLink
+blackbrixplcSTM32F103V.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
+blackbrixplcSTM32F103V.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
+
+blackbrixplcSTM32F103V.menu.upload_method.BMPMethod=BMP (Black Magic Probe)
+blackbrixplcSTM32F103V.menu.upload_method.BMPMethod.upload.protocol=gdb_bmp
+blackbrixplcSTM32F103V.menu.upload_method.BMPMethod.upload.tool=bmp_upload
+blackbrixplcSTM32F103V.menu.upload_method.BMPMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+
+#-- CPU Clock frequency
+blackbrixplcSTM32F103V.menu.cpu_speed.speed_72mhz=72Mhz (Normal)
+blackbrixplcSTM32F103V.menu.cpu_speed.speed_72mhz.build.f_cpu=72000000L
+
+blackbrixplcSTM32F103V.menu.cpu_speed.speed_48mhz=48Mhz (Slow - with USB)
+blackbrixplcSTM32F103V.menu.cpu_speed.speed_48mhz.build.f_cpu=48000000L
+
+blackbrixplcSTM32F103V.menu.cpu_speed.speed_128mhz=Overclocked 128Mhz NO USB SERIAL. MANUAL RESET NEEDED TO UPLOAD
+blackbrixplcSTM32F103V.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
+
+#-- Optimizations
+blackbrixplcSTM32F103V.menu.opt.osstd=Smallest (default)
+blackbrixplcSTM32F103V.menu.opt.osstd.build.flags.optimize=-Os
+blackbrixplcSTM32F103V.menu.opt.osstd.build.flags.ldspecs=
+blackbrixplcSTM32F103V.menu.opt.oslto=Smallest Code with LTO
+blackbrixplcSTM32F103V.menu.opt.oslto.build.flags.optimize=-Os -flto
+blackbrixplcSTM32F103V.menu.opt.oslto.build.flags.ldspecs=-flto
+blackbrixplcSTM32F103V.menu.opt.o1std=Fast (-O1)
+blackbrixplcSTM32F103V.menu.opt.o1std.build.flags.optimize=-O1
+blackbrixplcSTM32F103V.menu.opt.o1std.build.flags.ldspecs=
+blackbrixplcSTM32F103V.menu.opt.o1lto=Fast (-O1) with LTO
+blackbrixplcSTM32F103V.menu.opt.o1lto.build.flags.optimize=-O1 -flto
+blackbrixplcSTM32F103V.menu.opt.o1lto.build.flags.ldspecs=-flto
+blackbrixplcSTM32F103V.menu.opt.o2std=Faster (-O2)
+blackbrixplcSTM32F103V.menu.opt.o2std.build.flags.optimize=-O2
+blackbrixplcSTM32F103V.menu.opt.o2std.build.flags.ldspecs=
+blackbrixplcSTM32F103V.menu.opt.o2lto=Faster (-O2) with LTO
+blackbrixplcSTM32F103V.menu.opt.o2lto.build.flags.optimize=-O2 -flto
+blackbrixplcSTM32F103V.menu.opt.o2lto.build.flags.ldspecs=-flto
+blackbrixplcSTM32F103V.menu.opt.o3std=Fastest (-O3)
+blackbrixplcSTM32F103V.menu.opt.o3std.build.flags.optimize=-O3
+blackbrixplcSTM32F103V.menu.opt.o3std.build.flags.ldspecs=
+blackbrixplcSTM32F103V.menu.opt.o3lto=Fastest (-O3) with LTO
+blackbrixplcSTM32F103V.menu.opt.o3lto.build.flags.optimize=-O3 -flto
+blackbrixplcSTM32F103V.menu.opt.ogstd=Debug (-g)
+blackbrixplcSTM32F103V.menu.opt.o3lto.build.flags.ldspecs=-flto
+blackbrixplcSTM32F103V.menu.opt.ogstd.build.flags.optimize=-Og
+blackbrixplcSTM32F103V.menu.opt.ogstd.build.flags.ldspecs=
+
 ################################################################################
