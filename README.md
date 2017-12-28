@@ -12,7 +12,9 @@ I forked this repo to add a new board/variant (for experimantal/test-purposes) w
 * 16MHz ext. crystal
 
 In the code this board is called "BLACKBRIX_PLC" because this board is actually the mainboard of a mini-PLC (DIN rail / "smart-relay")  
-
+  
+Installation -> https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation  
+the complete WIKI -> https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki  
 
 ---- 
 
