@@ -88,21 +88,21 @@
 
 
 
-// GPIO PWM ADC
-/* GPIO A to E = 5 * 16  */
-#define BOARD_NR_GPIO_PINS      80
+/* Number of GPIO-, PWM-, ADC- and USED- Pins 
+  (for determining the counts of array-elements in the referring 'board.cpp'-file) */
+#define BOARD_NR_GPIO_PINS      80   // GPIO A to E = 5 * 16
 #define BOARD_NR_PWM_PINS       19
 #define BOARD_NR_ADC_PINS       16
-#define BOARD_NR_USED_PINS      7
+#define BOARD_NR_USED_PINS      4
 // -------------------
 
 
-// JTAG
+// SWD and/or JTAG
 #define BOARD_JTMS_SWDIO_PIN    PA13
 #define BOARD_JTCK_SWCLK_PIN    PA14
-#define BOARD_JTDI_PIN          PA15
-#define BOARD_JTDO_PIN          PB3
-#define BOARD_NJTRST_PIN        PB4
+//#define BOARD_JTDI_PIN          PA15
+//#define BOARD_JTDO_PIN          PB3
+//#define BOARD_NJTRST_PIN        PB4
 // -------------------
 
 
