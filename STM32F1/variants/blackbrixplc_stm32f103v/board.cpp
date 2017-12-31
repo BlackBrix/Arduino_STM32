@@ -36,6 +36,7 @@
 #include <libmaple/usart.h>
 #include <HardwareSerial.h>
 
+#include <wirish_debug.h>
 #include <wirish_types.h> // For stm32_pin_info and its contents
                                  // (these go into PIN_MAP).
 
@@ -61,7 +62,8 @@ void boardInit(void) {
     AFIO_DEBUG_SW_ONLY           => Serial Wire debug only (JTAG-DP disabled, SW-DP enabled)
     AFIO_DEBUG_NONE              => No debug, all JTAG and SW pins are free for use as GPIOs.
     */
-    afio_cfg_debug_ports(AFIO_DEBUG_SW_ONLY);
+    
+    enableDebugPorts(); // this function executes: afio_cfg_debug_ports(AFIO_DEBUG_SW_ONLY); see wirish_debug.cpp
 }
 
 
