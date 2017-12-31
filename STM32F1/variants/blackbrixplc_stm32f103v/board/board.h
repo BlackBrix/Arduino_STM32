@@ -45,6 +45,8 @@
 //#define BOARD_BUTTON_PIN2       PD12
 #define BOARD_LED_PIN           PC9
 #define BOARD_LED_PIN2          PC8
+// for compatibility with arduino examples:
+#define LED_BUILTIN             BOARD_LED_PIN
 
 
 // USARTS
