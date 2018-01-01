@@ -1,6 +1,6 @@
 # STM32 Boards
 
-menu.device_variant=Variant
+menu.device_variant=MCU Variant
 menu.bootloader_version=Bootloader version
 menu.upload_method=Upload method
 menu.cpu_speed=CPU Speed(MHz)
@@ -1044,7 +1044,7 @@ blackbrixplcSTM32F103V.menu.device_variant.STM32F103VC.build.ldscript=ld/stm32f1
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVE=STM32duino bootloader VE 512kB (Normal)
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVE.upload.protocol=maple_dfu
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVE.upload.tool=maple_upload
-blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVE.build.upload_flags=-DGENERIC_BOOTLOADER -DSERIAL_USB -DXTAL16M
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVE.build.upload_flags=-DGENERIC_BOOTLOADER -DSERIAL_USB -DXTAL16M -DDFU_VE
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVE.build.vect=VECT_TAB_ADDR=0x8002000
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVE.upload.maximum_size=516096
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVE.build.ldscript=ld/stm32f103veDFU.ld
@@ -1054,7 +1054,7 @@ blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVE.upload.altID=2
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVD=STM32duino bootloader VD 384kB
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVD.upload.protocol=maple_dfu
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVD.upload.tool=maple_upload
-blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVD.build.upload_flags=-DGENERIC_BOOTLOADER -DSERIAL_USB -DXTAL16M
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVD.build.upload_flags=-DGENERIC_BOOTLOADER -DSERIAL_USB -DXTAL16M -DDFU_VD
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVD.build.vect=VECT_TAB_ADDR=0x8002000
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVD.upload.maximum_size=385024
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVD.build.ldscript=ld/stm32f103vdDFU.ld
@@ -1064,7 +1064,7 @@ blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVD.upload.altID=2
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVC=STM32duino bootloader VC 256kB
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVC.upload.protocol=maple_dfu
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVC.upload.tool=maple_upload
-blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVC.build.upload_flags=-DGENERIC_BOOTLOADER -DSERIAL_USB -DXTAL16M
+blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVC.build.upload_flags=-DGENERIC_BOOTLOADER -DSERIAL_USB -DXTAL16M -DDFU_VC
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVC.build.vect=VECT_TAB_ADDR=0x8002000
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVC.upload.maximum_size=253952
 blackbrixplcSTM32F103V.menu.upload_method.DFUUploadMethodVC.build.ldscript=ld/stm32f103vcDFU.ld
