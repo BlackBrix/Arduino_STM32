@@ -104,7 +104,14 @@ void rcc_clk_init(rcc_sysclk_src sysclk_src,
     ASSERT(sysclk_src == RCC_CLKSRC_PLL &&
            pll_src    == RCC_PLLSRC_HSE);
 
-    RCC_BASE->CFGR = pll_src | pll_mul | (0x3<<22);
+#ifdef XTAL16M
+    // 16MHz crystal (HSE)
+    // in this case we set additionally the Bit 17 (PLLXTPRE=1)  =>  then HSE clock is divided by 2 before PLL entry
+    RCC_BASE->CFGR = pll_src | pll_mul | (0x3<<22) | RCC_CFGR_PLLXTPRE;
+#else
+	// default 8MHz or 12 MHz crystal (no division before PLL entry)
+	RCC_BASE->CFGR = pll_src | pll_mul | (0x3<<22);
+#endif
 
     /* Turn on, and wait for, HSE. */
     rcc_turn_on_clk(RCC_CLK_HSE);
