@@ -45,29 +45,6 @@
 
 
 
-// detect a wrong DFU bootloader selection:
-#ifdef GENERIC_BOOTLOADER
-    #if defined MCU_STM32F103VC
-        #ifndef DFU_VC
-            #define WRONG_UPLOAD_METHOD 1
-        #endif
-    #elif defined MCU_STM32F103VD
-        #ifndef DFU_VD
-            #define WRONG_UPLOAD_METHOD 1    
-        #endif
-    #else // MCU_STM32F103VE
-        #ifndef DFU_VE
-            #define WRONG_UPLOAD_METHOD 1    
-        #endif    
-    #endif
-
-    #ifdef WRONG_UPLOAD_METHOD
-        #error "wrong 'Upload method' !! --> Please select a suitable 'Upload method' from the 'Tools' menu that matches your selected MCU variant."
-    #endif
-#endif
-
-
-
 // boardInit():
 //
 // When defining your own board.cpp, you can put extra code in this
