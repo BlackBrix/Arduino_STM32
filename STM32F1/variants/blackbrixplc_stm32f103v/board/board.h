@@ -41,6 +41,35 @@
 #define CYCLES_PER_MICROSECOND	(F_CPU / 1000000U)
 #define SYSTICK_RELOAD_VAL     (F_CPU/1000) - 1 /* takes a cycle to reload */
 
+
+
+#define XTAL16M  // 16MHz crystal (HSE)
+
+
+// detect a wrong DFU bootloader selection:
+#ifdef GENERIC_BOOTLOADER
+    #if defined MCU_STM32F103VC
+        #ifndef DFU_VC
+            #define WRONG_UPLOAD_METHOD 1
+        #endif
+    #elif defined MCU_STM32F103VD
+        #ifndef DFU_VD
+            #define WRONG_UPLOAD_METHOD 1    
+        #endif
+    #else // MCU_STM32F103VE
+        #ifndef DFU_VE
+            #define WRONG_UPLOAD_METHOD 1    
+        #endif    
+    #endif
+
+    #ifdef WRONG_UPLOAD_METHOD
+        #error "wrong 'Upload method' !! --> Please select a suitable 'Upload method' from the 'Tools' menu that matches your selected MCU variant."
+    #endif
+#endif
+
+
+
+
 //#define BOARD_BUTTON_PIN        PC0
 //#define BOARD_BUTTON_PIN2       PD12
 #define BOARD_LED_PIN           PC9
