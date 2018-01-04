@@ -72,8 +72,8 @@
 
 //#define BOARD_BUTTON_PIN        PC0
 //#define BOARD_BUTTON_PIN2       PD12
-#define BOARD_LED_PIN           PC9
-#define BOARD_LED_PIN2          PC8
+#define BOARD_LED_PIN           PC9  // green
+#define BOARD_LED_PIN2          PC8  // red
 // for compatibility with arduino examples:
 #define LED_BUILTIN             BOARD_LED_PIN
 
