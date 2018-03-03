@@ -18,14 +18,14 @@ In the code this board is called "BLACKBRIX_PLC" because this board is actually 
 * Download and install version 1.8.x of the Arduino IDE from [here](https://www.arduino.cc/en/Main/Software).
 * Run the IDE, and on the Tools menu, select the Boards manager, and install the "Arduino SAMD Boards" from the list of available boards. This installs compiler support for ARM Cortex.
 * Download a zip file containing the Arduino STM32 files from [here](https://github.com/BlackBrix/Arduino_STM32/archive/master.zip).
-* for a normal Arduino-Installation:  
-  * Unzip the content of the zip file, and place the 'Arduino_STM32' folder to [Arduino sketches folder]/[hardware]/[Arduino_STM32].  
-  (e.g. on Windows the default [Arduino sketches folder] is like "C:\Users\USERNAME\Documents\Arduino\...")
-  * Create the 'hardware' folder there if it does not exist yet.
-* for a portable Arduino-Intallation:  
-  * Unzip the content of the zip file, and place the 'Arduino_STM32' folder dirctly into the 'hardware' folder that is located in the arduino main-directory. (the main-directory is where the 'arduino.exe' is located)  
-So we get [Arduino main directory]/[hardware]/[Arduino_STM32] in this case.
-  * Create the 'hardware' folder there if it does not exist yet.
+* Unzip the content of the zip file, and place the 'Arduino_STM32' folder to  
+`[Arduino sketches folder]/[hardware]/[Arduino_STM32]`.  
+(you can see where your `[Arduino sketches folder]` is by looking into the Arduino IDE menu:  
+`File` -> `Preferences` -> `Sketchbook location`.)  
+(e.g. under Windows OS the default `[Arduino sketches folder]` is like  
+`"C:\Users\USERNAME\Documents\Arduino\..."`)
+* Create the `hardware` folder there if it does not exist yet.
+
   
   
 the complete WIKI of the original repo -> https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki  
